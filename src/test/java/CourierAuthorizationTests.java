@@ -10,6 +10,15 @@ import base.BaseTest;
 
 public class CourierAuthorizationTests extends BaseTest {
 
+    private Integer courierId;
+    private Courier courier;
+
+    @Before
+    public void setUpCourier() {
+        courier = CourierGenerator.randomCourier();
+        createCourier(courier);
+    }
+
     @Test
     public void loginCourierTest() {
         Courier courier = CourierGenerator.randomCourier();
